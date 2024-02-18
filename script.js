@@ -5,7 +5,7 @@ function updateDateTime() {
 }
 
 
-function changeFormat(format) {
+function changeFormat() {
 
     analog = !analog
     
