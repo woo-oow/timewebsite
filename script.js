@@ -6,7 +6,10 @@ function updateDateTime() {
 
 
 function changeFormat(format) {
-    // You can use the `format` argument here, for example:
+
+    analog = !analog
+    
+    
     if (format === 'analog') {
         // Do something for analog format
         alert('Switching to analog format!');
