@@ -7,16 +7,14 @@ function updateClock() {
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const currtime = `${hours}: ${minutes}: ${seconds}`;
+
+    document.getElementById('clock-time').textContent = timeString;
     
     if (sys1) {
 
         hours %= 12
-    
-        if (hours <= 12) {
-            const currtime = `${hours}: ${minutes}: ${seconds} am`;
-        else {
-             const currtime = `${hours}: ${minutes}: ${seconds} pm`;
-        }
+
+        timeString += sys1 ? ' am' : ' pm';
 
     }
     document.getElementById('clock-time').textContent = timeString;
