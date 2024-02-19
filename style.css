@@ -13,6 +13,12 @@ body {
     margin: 0 auto;
 }
 
+#sys {
+
+    border: 2px solid gray;
+    text-align: center;
+    padding: 50px;
+}
 .container {
     display: flex;
     justify-content: center;
