@@ -1,18 +1,18 @@
 let sys1 = false;
 
-function updateClock() {
+function update() {
 
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');a
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const currtime = `${hours}: ${minutes}: ${seconds}`;
 
     if (sys1) {
 
-        hours %= 12
+        hours %= 12;
 
-        currtime += sys1 ? ' am' : ' pm';
+        currtime += hours < 12 ? ' am' : ' pm';
 
     }
     document.getElementById('clock-time').textContent = currtime;
@@ -20,8 +20,8 @@ function updateClock() {
 
 function swap() {
     sys1 = !sys1;
-    updateClock();
+    update();
 }
 
-updateClock(); 
+update(); 
 setInterval(updateClock, 1000); 
