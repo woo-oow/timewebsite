@@ -15,7 +15,8 @@ body {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     
 }
 
@@ -29,10 +30,10 @@ body {
 }
 
 .button:hover {
-
     
     background-color: #000000;
     border-radius: 5px;
     color: #FFFFFF;
+    transition: 0.3s linear;
 
 }
