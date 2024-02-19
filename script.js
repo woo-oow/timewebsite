@@ -10,11 +10,20 @@ function update() {
 
     if (sys1) {
 
+
         hours %= 12;
-        currtime += hours < 12 ? ' am' : ' pm';
+        
+        if (hours < 12) {
+            document.getElementById('sys').textContent = ' am';
+            currtime += ' am'
+        else {
+            document.getElementById('sys').textContent = 'pm';
+            currtime += ' pm'
+        
 
     }
     document.getElementById('clock-time').textContent = currtime;
+    
 }
 
 function swap() {
