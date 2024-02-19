@@ -5,10 +5,10 @@ function update() {
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    let ampm = 'am';
+    let ampm = 'AM';
 
     if (sys1) {
-        ampm = hours >= 12 ? 'pm' : 'am';
+        ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12 || 12; 
     }
 
