@@ -6,12 +6,11 @@ function update() {
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');a
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    const currtime = `${hours}: ${minutes}: ${seconds}`;
+    let currtime = `${hours}: ${minutes}: ${seconds}`;
 
     if (sys1) {
 
         hours %= 12;
-
         currtime += hours < 12 ? ' am' : ' pm';
 
     }
