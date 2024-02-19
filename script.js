@@ -7,4 +7,5 @@ function updateClock() {
     document.getElementById('clock-time').textContent = timeString;
 }
 
-setInterval(updateClock, 1000);
+updateClock(); // Update the clock immediately
+setInterval(updateClock, 1000); // Update the clock every second
