@@ -16,7 +16,6 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    
 }
 
 .button {
@@ -24,6 +23,8 @@ body {
     border-radius: 5px;
     background-color: #e2e2e2;
     transition: background-color 1s linear, color 1s linear;
+    padding: 5px 10px;
+    margin-top: 10px;
 }
 
 .button:hover {
