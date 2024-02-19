@@ -49,7 +49,7 @@ function padZero(num) {
 function displayStoppedStopwatches() {
   const stoppedStopwatchesContainer = document.getElementById("stoppedStopwatches");
   stoppedStopwatchesContainer.innerHTML = stoppedStopwatches.map(time => {
-    return `<div>${formatTime(time)}<button>Delete</button></div>`;
+    return `<div>${formatTime(time)}<button onclick="deleteStopwatch(${time})">Delete</button></div>`;
   }).join("");
 }
 
