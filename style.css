@@ -16,11 +16,12 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    cursor: pointer
+    
 }
 
 .button {
 
+    cursor: pointer;
     border-radius: 5px;
     background-color: #e2e2e2;
     outline-color: #000000;
