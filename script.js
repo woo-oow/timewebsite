@@ -35,6 +35,14 @@ function stopStopwatch() {
   updateStopwatchDisplay(stopwatchTime);
 }
 
+function deleteStopwatch(time) {
+  const index = stoppedStopwatches.indexOf(time);
+  if (index > -1) {
+    stoppedStopwatches.splice(index, 1);
+    displayStoppedStopwatches();
+  }
+}
+
 function updateStopwatchDisplay(time) {
   const hours = Math.floor(time / 3600);
   const minutes = Math.floor((time % 3600) / 60);
@@ -60,10 +68,4 @@ function formatTime(time) {
   return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
 }
 
-function deleteStopwatch(time) {
-  const index = stoppedStopwatches.indexOf(time);
-  if (index > -1) {
-    stoppedStopwatches.splice(index, 1);
-    displayStoppedStopwatches();
-  }
-}
+
