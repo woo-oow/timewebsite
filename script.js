@@ -6,8 +6,10 @@ const stoppedStopwatches = [];
 function startTimer() {
   const timeInput = parseInt(document.getElementById("timerInput").value);
   if (!isNaN(timeInput) && timeInput > 0) {
+    let remainingTime = timeInput;
     timerInterval = setInterval(() => {
-      if (--timeInput < 0) {
+      remainingTime--;
+      if (remainingTime < 0) {
         clearInterval(timerInterval);
         alert("Timer finished!");
       }
