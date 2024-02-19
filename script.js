@@ -23,4 +23,4 @@ function swap() {
 }
 
 update(); 
-setInterval(updateClock, 1000); 
+setInterval(update, 1000); 
