@@ -1,5 +1,4 @@
 let sys1 = false;
-let twelvehr = document.getElementById('twelvehr');
 
 function updateClock() {
     if (sys1) {
@@ -12,9 +11,10 @@ function updateClock() {
         document.getElementById('clock-time').textContent = timeString;
         
         if (hours <= 12) {
-            contentDiv.textContent = 'am';
+            const timeString = `${hours}: ${minutes}: ${seconds} am`;
         else {
-            contentDiv.textContent = 'pm';
+             const timeString = `${hours}: ${minutes}: ${seconds} pm`;
+
     }    
     else {
         const now = new Date();
