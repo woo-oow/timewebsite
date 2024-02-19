@@ -35,14 +35,6 @@ function stopStopwatch() {
   updateStopwatchDisplay(stopwatchTime);
 }
 
-function deleteStopwatch(time) {
-  const index = stoppedStopwatches.indexOf(time);
-  if (index > -1) {
-    stoppedStopwatches.splice(index, 1);
-    displayStoppedStopwatches();
-  }
-}
-
 function updateStopwatchDisplay(time) {
   const hours = Math.floor(time / 3600);
   const minutes = Math.floor((time % 3600) / 60);
@@ -57,7 +49,7 @@ function padZero(num) {
 function displayStoppedStopwatches() {
   const stoppedStopwatchesContainer = document.getElementById("stoppedStopwatches");
   stoppedStopwatchesContainer.innerHTML = stoppedStopwatches.map(time => {
-    return `<div>${formatTime(time)}<button onclick="deleteStopwatch(${time})">Delete</button></div>`;
+    return `<div>${formatTime(time)}<button>Delete</button></div>`;
   }).join("");
 }
 
@@ -68,4 +60,9 @@ function formatTime(time) {
   return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
 }
 
-
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("startTimerButton").addEventListener("click", startTimer);
+  document.getElementById("stopTimerButton").addEventListener("click", stopTimer);
+  document.getElementById("startStopwatchButton").addEventListener("click", startStopwatch);
+  document.getElementById("stopStopwatchButton").addEventListener("click", stopStopwatch);
+});
