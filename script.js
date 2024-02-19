@@ -1,21 +1,19 @@
 let sys1 = false;
 
 function update() {
-    
     const now = new Date();
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    let currtime = `${hours}:${minutes}:${seconds}`;
-    document.getElementById('sys').textContent = '24hr';
+    let ampm = 'am';
 
     if (sys1) {
-        
-        hours %= 12;
-        currtime += hours < 12 ? ' am' : ' pm';
-        document.getElementById('sys').textContent = '12hr';
+        ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12 || 12; 
     }
 
+    const currtime = `${hours}:${minutes}:${seconds} ${ampm}`;
+    document.getElementById('sys').textContent = sys1 ? '12hr' : '24hr';
     document.getElementById('clock-time').textContent = currtime;
 }
 
