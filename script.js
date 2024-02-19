@@ -8,16 +8,14 @@ function updateClock() {
     const seconds = String(now.getSeconds()).padStart(2, '0');
     const currtime = `${hours}: ${minutes}: ${seconds}`;
 
-    document.getElementById('clock-time').textContent = timeString;
-    
     if (sys1) {
 
         hours %= 12
 
-        timeString += sys1 ? ' am' : ' pm';
+        currtime += sys1 ? ' am' : ' pm';
 
     }
-    document.getElementById('clock-time').textContent = timeString;
+    document.getElementById('clock-time').textContent = currtime;
 }
 
 function swap() {
