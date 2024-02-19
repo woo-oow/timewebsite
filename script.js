@@ -7,22 +7,15 @@ function update() {
     const minutes = String(now.getMinutes());
     const seconds = String(now.getSeconds());
     let currtime = `${hours}: ${minutes}: ${seconds}`;
+    document.getElementById('sys').textContent = '24hr';
 
     if (sys1) {
 
-
-        hours %= 12;
         
-        if (hours < 12) {
-            document.getElementById('sys').textContent = ' am';
-            currtime += ' am'
-        }
-            
-        else {
-            document.getElementById('sys').textContent = 'pm';
-            currtime += ' pm'
-        }
-
+        hours %= 12;
+        currtime += hours < 12 ? ' am' : ' pm';
+        document.getElementById('sys').textContent = '12hr';
+        
     }
     
     document.getElementById('clock-time').textContent = currtime;
