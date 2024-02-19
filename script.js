@@ -8,13 +8,14 @@ function updateClock() {
         const seconds = String(now.getSeconds()).padStart(2, '0');
         const timeString = `${hours}: ${minutes}: ${seconds}`;
         
-        document.getElementById('clock-time').textContent = timeString;
         
         if (hours <= 12) {
             const timeString = `${hours}: ${minutes}: ${seconds} am`;
         else {
              const timeString = `${hours}: ${minutes}: ${seconds} pm`;
+        }
 
+        document.getElementById('clock-time').textContent = timeString;
     }    
     else {
         const now = new Date();
