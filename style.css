@@ -21,10 +21,20 @@ body {
     margin-bottom: 20px;
 }
 
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; 
+    border: 2px solid black;
+    color: #ffffff; 
 }
 
 .button {
@@ -35,7 +45,7 @@ body {
     color: #FFFFFF;
     font-size: 16px;
     padding: 10px 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, color 0.3s;
 }
