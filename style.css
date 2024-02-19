@@ -4,50 +4,42 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.clock-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 #clock {
     font-size: 48px;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px;
-}
-
-#sys {
-    text-align: center;
-    margin-top: 10px;
-    font-style: italic;
-    color: #666666;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
 }
 
 .button {
     cursor: pointer;
+    border: none;
     border-radius: 5px;
-    background-color: #e2e2e2;
-    transition: background-color 0.5s, color 0.5s;
+    background-color: #007bff;
+    color: #FFFFFF;
+    font-size: 16px;
     padding: 10px 20px;
     margin-top: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .button:hover {
-    background-color: #333333;
-    color: #FFFFFF;
+    background-color: #0056b3;
 }
