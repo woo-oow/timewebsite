@@ -16,12 +16,15 @@ function update() {
         if (hours < 12) {
             document.getElementById('sys').textContent = ' am';
             currtime += ' am'
+        }
+            
         else {
             document.getElementById('sys').textContent = 'pm';
             currtime += ' pm'
-        
+        }
 
     }
+    
     document.getElementById('clock-time').textContent = currtime;
     
 }
