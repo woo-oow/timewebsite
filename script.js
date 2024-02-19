@@ -1,68 +1,48 @@
+// Clock
+function updateClock() {
+    const now = new Date();
+    document.getElementById('clock').textContent = now.toLocaleString();
+}
+setInterval(updateClock, 1000);
+
+// Timer
 let timerInterval;
+function startTimer() {
+    const timeInput = document.getElementById('timer-input').value;
+    let time = parseInt(timeInput, 10);
+    if (isNaN(time) || time <= 0) {
+        alert('Please enter a valid time in seconds.');
+        return;
+    }
+
+    timerInterval = setInterval(() => {
+        if (time <= 0) {
+            clearInterval(timerInterval);
+            alert('Timer done!');
+        } else {
+            time--;
+            document.getElementById('timer-input').value = time;
+        }
+    }, 1000);
+}
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+// Stopwatch
 let stopwatchInterval;
 let stopwatchTime = 0;
-const stoppedStopwatches = [];
-
-function startTimer() {
-  const timeInput = parseInt(document.getElementById("timerInput").value);
-  if (!isNaN(timeInput) && timeInput > 0) {
-    let remainingTime = timeInput;
-    timerInterval = setInterval(() => {
-      remainingTime--;
-      if (remainingTime < 0) {
-        clearInterval(timerInterval);
-        alert("Timer finished!");
-      }
-    }, 1000);
-  }
-}
-
-function stopTimer() {
-  clearInterval(timerInterval);
-}
-
 function startStopwatch() {
-  stopwatchInterval = setInterval(() => {
-    updateStopwatchDisplay(++stopwatchTime);
-  }, 1000);
+    stopwatchInterval = setInterval(() => {
+        stopwatchTime++;
+        const hours = Math.floor(stopwatchTime / 3600);
+        const minutes = Math.floor((stopwatchTime % 3600) / 60);
+        const seconds = stopwatchTime % 60;
+        document.getElementById('stopwatch-time').textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }, 1000);
 }
-
 function stopStopwatch() {
-  clearInterval(stopwatchInterval);
-  stoppedStopwatches.push(stopwatchTime);
-  displayStoppedStopwatches();
-  stopwatchTime = 0;
-  updateStopwatchDisplay(stopwatchTime);
+    clearInterval(stopwatchInterval);
+    stopwatchTime = 0;
+    document.getElementById('stopwatch-time').textContent = '00:00:00';
 }
-
-function updateStopwatchDisplay(time) {
-  const hours = Math.floor(time / 3600);
-  const minutes = Math.floor((time % 3600) / 60);
-  const seconds = time % 60;
-  document.getElementById("stopwatchDisplay").textContent = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
-}
-
-function padZero(num) {
-  return num.toString().padStart(2, "0");
-}
-
-function displayStoppedStopwatches() {
-  const stoppedStopwatchesContainer = document.getElementById("stoppedStopwatches");
-  stoppedStopwatchesContainer.innerHTML = stoppedStopwatches.map(time => {
-    return `<div>${formatTime(time)}<button onclick="deleteStopwatch(${time})">Delete</button></div>`;
-  }).join("");
-}
-
-function formatTime(time) {
-  const hours = Math.floor(time / 3600);
-  const minutes = Math.floor((time % 3600) / 60);
-  const seconds = time % 60;
-  return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("startTimerButton").addEventListener("click", startTimer);
-  document.getElementById("stopTimerButton").addEventListener("click", stopTimer);
-  document.getElementById("startStopwatchButton").addEventListener("click", startStopwatch);
-  document.getElementById("stopStopwatchButton").addEventListener("click", stopStopwatch);
-});
