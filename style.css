@@ -21,19 +21,13 @@ body {
 }
 
 .button {
-
     cursor: pointer;
     border-radius: 5px;
     background-color: #e2e2e2;
-    outline-color: #000000;
-
+    transition: background-color 0.3s linear, color 0.3s linear;
 }
 
 .button:hover {
-    
     background-color: #000000;
-    border-radius: 5px;
     color: #FFFFFF;
-    transition: 0.3s linear;
-
 }
