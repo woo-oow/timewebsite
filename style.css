@@ -1,5 +1,10 @@
-#clock,
-#timer,
-#stopwatch {
-    margin-bottom: 20px;
+#clock {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    width: 200px;
+    margin: 0 auto;
 }
