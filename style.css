@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, opensans-semibold;
   margin: 0;
   padding: 20px;
   text-align: center;
@@ -15,6 +15,12 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+
+  background-color = #0f0f0f
+  outline-color = #FFFFFF
+
+}
 #stopwatchDisplay {
   font-size: 24px;
 }
