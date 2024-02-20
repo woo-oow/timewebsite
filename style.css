@@ -25,7 +25,8 @@ body {
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; 
+    margin-bottom: 20px; 
 }
 
 .format-circle {
@@ -49,7 +50,6 @@ body {
     color: #FFFFFF;
     font-size: 16px;
     padding: 10px 20px;
-    margin-top: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
     letter-spacing: 1px;
