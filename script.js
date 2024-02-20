@@ -3,13 +3,14 @@ let elapsedTimes = {
     stopwatch1: 0,
     stopwatch2: 0
 };
+let sys1 = true;
 
 function update() {
     const now = new Date();
     let hours = now.getHours();
     let ampm = '';
 
-    if (sys1) {
+    if (!sys1) {
         ampm = hours >= 12 ? 'PM' : 'AM';
         hours = hours % 12 || 12;
     } else {
