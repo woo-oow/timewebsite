@@ -1,6 +1,8 @@
-let sys1 = false;
 let timerInterval;
-let elapsedTime = 0;
+let elapsedTimes = {
+    stopwatch1: 0,
+    stopwatch2: 0
+};
 
 function update() {
     const now = new Date();
@@ -19,20 +21,18 @@ function update() {
     const seconds = String(now.getSeconds()).padStart(2, '0');
 
     const currtime = `${hours}:${minutes}:${seconds} ${ampm}`;
-    document.querySelector('.format-circle').textContent = sys1 ? '12hr' : '24hr';
+    document.getElementById('format-circle').textContent = sys1 ? '12hr' : '24hr';
     document.getElementById('clock-time').textContent = currtime;
+
+    document.getElementById('stopwatch1').textContent = formatElapsedTime(elapsedTimes.stopwatch1);
+    document.getElementById('stopwatch2').textContent = formatElapsedTime(elapsedTimes.stopwatch2);
 }
 
-function startTimer() {
+function startTimer(stopwatch) {
     if (!timerInterval) {
         timerInterval = setInterval(function() {
-            elapsedTime++;
-            const hours = Math.floor(elapsedTime / 3600);
-            const minutes = Math.floor((elapsedTime % 3600) / 60);
-            const seconds = elapsedTime % 60;
-
-            const timerDisplay = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-            document.querySelector('.display').textContent = timerDisplay;
+            elapsedTimes[stopwatch]++;
+            update();
         }, 1000);
     }
 }
@@ -42,11 +42,16 @@ function stopTimer() {
     timerInterval = null;
 }
 
-function resetTimer() {
-    clearInterval(timerInterval);
-    timerInterval = null;
-    elapsedTime = 0;
-    document.querySelector('.display').textContent = '00:00:00';
+function resetTimer(stopwatch) {
+    elapsedTimes[stopwatch] = 0;
+    update();
+}
+
+function formatElapsedTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
 
 function swap() {
