@@ -24,7 +24,7 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -38,7 +38,7 @@ body {
     background-color: #FFFFFF;
     color: #000000;
     border: 2px solid #000000;
-    margin-bottom: 10px;
+    margin: 0 20px;
 }
 
 .button {
