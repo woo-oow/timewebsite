@@ -24,8 +24,14 @@ body {
 
 
 .stopwatch {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
+    width: 100%;
 }
+
 
 .container {
     display: flex;
