@@ -24,7 +24,19 @@ function update() {
 function swap() {
     sys1 = !sys1;
     update();
+
+    const formatCircle = document.getElementById('format-circle');
+    if (sys1) {
+        formatCircle.textContent = '12hr';
+        formatCircle.style.backgroundColor = '#FFFFFF';
+        formatCircle.style.color = '#000000';
+    } else {
+        formatCircle.textContent = '24hr';
+        formatCircle.style.backgroundColor = '#000000';
+        formatCircle.style.color = '#FFFFFF';
+    }
 }
+
 
 update();
 setInterval(update, 1000);
