@@ -28,17 +28,17 @@ body {
     align-items: center;
 }
 
-#sys {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.format-circle {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background-color: #FFFFFF;
     color: #000000;
     border: 2px solid #000000;
-    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .button {
