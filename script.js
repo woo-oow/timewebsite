@@ -17,7 +17,7 @@ function update() {
     const seconds = String(now.getSeconds()).padStart(2, '0');
 
     const currtime = `${hours}:${minutes}:${seconds} ${ampm}`;
-    document.getElementById('sys').textContent = sys1 ? '12hr' : '24hr';
+    document.getElementById('format-circle').textContent = sys1 ? '12hr' : '24hr';
     document.getElementById('clock-time').textContent = currtime;
 }
 
