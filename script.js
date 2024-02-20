@@ -1,8 +1,5 @@
 let timerInterval;
-let elapsedTimes = {
-    stopwatch1: 0,
-    stopwatch2: 0
-};
+let elapsedTime = 0;
 let sys1 = true;
 
 function update() {
@@ -25,14 +22,13 @@ function update() {
     document.getElementById('format-circle').textContent = sys1 ? '12hr' : '24hr';
     document.getElementById('clock-time').textContent = currtime;
 
-    document.getElementById('stopwatch1').textContent = formatElapsedTime(elapsedTimes.stopwatch1);
-    document.getElementById('stopwatch2').textContent = formatElapsedTime(elapsedTimes.stopwatch2);
+    document.getElementById('stopwatch').textContent = formatElapsedTime(elapsedTime);
 }
 
-function startTimer(stopwatch) {
+function startTimer() {
     if (!timerInterval) {
         timerInterval = setInterval(function() {
-            elapsedTimes[stopwatch]++;
+            elapsedTime++;
             update();
         }, 1000);
     }
@@ -43,8 +39,8 @@ function stopTimer() {
     timerInterval = null;
 }
 
-function resetTimer(stopwatch) {
-    elapsedTimes[stopwatch] = 0;
+function resetTimer() {
+    elapsedTime = 0;
     update();
 }
 
