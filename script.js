@@ -26,16 +26,11 @@ function swap() {
     update();
 
     const formatCircle = document.getElementById('format-circle');
-    if (sys1) {
-        formatCircle.textContent = '12hr';
-        formatCircle.style.backgroundColor = '#FFFFFF';
-        formatCircle.style.color = '#000000';
-    } else {
-        formatCircle.textContent = '24hr';
-        formatCircle.style.backgroundColor = '#000000';
-        formatCircle.style.color = '#FFFFFF';
-    }
+    formatCircle.textContent = sys1 ? '12hr' : '24hr';
+    formatCircle.style.backgroundColor = sys1 ? '#FFFFFF' : '#000000';
+    formatCircle.style.color = sys1 ? '#000000' : '#FFFFFF';
 }
+
 
 
 update();
