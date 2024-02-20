@@ -25,9 +25,10 @@ body {
 
 .stopwatch {
     position: fixed;
-    bottom: 10;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    transform: translateY(-5%);
     text-align: center;
     width: 100%;
 }
