@@ -24,14 +24,7 @@ function update() {
 function swap() {
     sys1 = !sys1;
     update();
-
-    const formatCircle = document.getElementById('format-circle');
-    formatCircle.textContent = sys1 ? '12hr' : '24hr';
-    formatCircle.style.backgroundColor = sys1 ? '#FFFFFF' : '#000000';
-    formatCircle.style.color = sys1 ? '#000000' : '#FFFFFF';
 }
-
-
 
 update();
 setInterval(update, 1000);
